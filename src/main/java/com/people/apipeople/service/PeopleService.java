@@ -1,12 +1,16 @@
 package com.people.apipeople.service;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.people.apipeople.repository.IPeopleRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import com.people.apipeople.models.People;
 
+@Service
 public class PeopleService implements IPeopleService {
 	
 	@Autowired
@@ -24,6 +28,7 @@ public class PeopleService implements IPeopleService {
 
 	@Override
 	public Mono<People> save(People people) {
+		people.setCreated_at(new Date(System.currentTimeMillis()));
 		return repository.save(people);
 	}
 	

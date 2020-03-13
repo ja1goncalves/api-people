@@ -17,7 +17,8 @@ public class People {
 	@NotNull
 	private String nome;
 	
-	private char gender;
+	@Size(min=1)
+	private String gender;
 	
 	@NotNull
 	private String email;
@@ -25,7 +26,7 @@ public class People {
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date birthday;
 	
-	private String naturality;
+	private String naturalness;
 	
 	private String nationality;
 	
@@ -48,10 +49,10 @@ public class People {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public char getGender() {
+	public @Size(min = 1) String getGender() {
 		return gender;
 	}
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getEmail() {
@@ -67,10 +68,10 @@ public class People {
 		this.birthday = birthday;
 	}
 	public String getNaturality() {
-		return naturality;
+		return naturalness;
 	}
 	public void setNaturality(String naturality) {
-		this.naturality = naturality;
+		this.naturalness = naturality;
 	}
 	public String getNationality() {
 		return nationality;
