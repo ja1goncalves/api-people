@@ -26,6 +26,11 @@ public class PeoplesController {
 	@Autowired
 	PeopleService service;
 	
+	@GetMapping(value="")
+	public Flux<People> index() {
+		return this.all();
+	}
+	
 	@GetMapping(value="/peoples")
 	public Flux<People> all() {
 		return service.findAll();
