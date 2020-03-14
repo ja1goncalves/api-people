@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication()
 public class ApiRestPeopleApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(ApiRestPeopleApplication.class, args);
 	}

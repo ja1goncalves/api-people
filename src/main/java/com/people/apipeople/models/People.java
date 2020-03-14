@@ -15,7 +15,7 @@ public class People {
 	private String id;
 	
 	@NotNull
-	private String nome;
+	private String name;
 	
 	@Size(min=1)
 	private String gender;
@@ -43,11 +43,11 @@ public class People {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public @Size(min = 1) String getGender() {
 		return gender;

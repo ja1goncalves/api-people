@@ -29,7 +29,7 @@ public class PeoplesController {
 
 	@Autowired
 	PeopleService service;
-	
+
 	@GetMapping(value="")
 	@ApiOperation(value="Inital page")
 	public Flux<People> index() {
@@ -48,11 +48,13 @@ public class PeoplesController {
 		return service.findById(id);
 	}
 	
+	
 	@PostMapping(value="/peoples")
-	@ApiOperation(value="Register one people")
-	public Mono<People> save(@RequestBody People people){
+	@ApiOperation(value="Register the informartions of a peoples")
+	public Mono<People> saveUser(@RequestBody People people){
 		return service.save(people);
 	}
+
 	
 	@PutMapping("/peoples")
 	@ApiOperation(value="Update the informartions of a people")
