@@ -2,6 +2,7 @@
 
 ## Description
 This project were build in SO Linux Ubuntu 18.04 with JAVA 11, Spring Boot 2.5 Framework and MongoDB 4.
+API available in: [API REST PEOPLE](https://api-rest-peoples.herokuapp.com/swagger-ui.html)
 
 ## Getting Started
 
