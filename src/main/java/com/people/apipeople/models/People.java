@@ -2,9 +2,12 @@ package com.people.apipeople.models;
 
 import java.util.Date;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,9 +23,10 @@ public class People {
 	@Size(min=1)
 	private String gender;
 	
-	@NotNull
+	@Email(message = "Email should be valid")
 	private String email;
 	
+	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date birthday;
 	
@@ -31,12 +35,17 @@ public class People {
 	private String nationality;
 	
 	@NotNull
+	@Indexed(unique = true, name = "people_cpf_unique")
 	@Size(min=11)
+	@CPF(message="invalide CPF")
 	private String cpf;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date created_at;
-
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+	private Date updated_at;
+	
 	public String getId() {
 		return id;
 	}
@@ -91,4 +100,11 @@ public class People {
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
 	}
+	public Date getUpdated_at() {
+		return updated_at;
+	}
+	public void setUpdated_at(Date updated_at) {
+		this.updated_at = updated_at;
+	}
+	
 }

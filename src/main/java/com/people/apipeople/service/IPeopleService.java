@@ -9,5 +9,6 @@ public interface IPeopleService {
 	Flux<People> findAll();
 	Mono<People> findById(String id);
 	Mono<People> save(People people);
+	Mono<People> update(People people);
 	Mono<Void> delete(People people);
 }

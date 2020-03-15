@@ -27,8 +27,16 @@ public class PeopleService implements IPeopleService {
 	}
 
 	@Override
-	public Mono<People> save(People people) {
+	public Mono<People>save(People people) {
 		people.setCreated_at(new Date(System.currentTimeMillis()));
+		people.setCpf(people.getCpf().replaceAll("[\\D]", ""));
+		return repository.save(people);
+	}
+
+	@Override
+	public Mono<People>update(People people) {
+		people.setUpdated_at(new Date(System.currentTimeMillis()));
+		people.setCpf(people.getCpf().replaceAll("[\\D]", ""));
 		return repository.save(people);
 	}
 	

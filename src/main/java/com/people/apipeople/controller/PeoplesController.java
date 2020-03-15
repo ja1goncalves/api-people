@@ -51,7 +51,7 @@ public class PeoplesController {
 	
 	@PostMapping(value="/peoples")
 	@ApiOperation(value="Register the informartions of a peoples")
-	public Mono<People> saveUser(@RequestBody People people){
+	public Mono<People> save(@RequestBody People people){
 		return service.save(people);
 	}
 
@@ -59,7 +59,7 @@ public class PeoplesController {
 	@PutMapping("/peoples")
 	@ApiOperation(value="Update the informartions of a people")
 	public Mono<People> update(@RequestBody @Valid People people) {
-		return service.save(people);
+		return service.update(people);
 	}
 	
 	@DeleteMapping("/peoples")
