@@ -36,7 +36,7 @@ The configuration of database are in ``src/main/resources/application.properties
 Run file ``src/main/java/com/people/apipeople/ApiRestPeopleApplication.java``.
 
 ## Application Routes
-After run application, access in ``http://localhost:8080/swagger-ui.html`` for see the application routes, models and others details.
+After run application, access ``http://localhost:8080/swagger-ui.html`` for see the application routes, models and others details.
 
 ### Reference Documentation
 For further reference, please consider the following sections:
