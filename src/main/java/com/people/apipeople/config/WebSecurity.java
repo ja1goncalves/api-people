@@ -26,7 +26,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.antMatchers("/v2/api-docs", "/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().permitAll().defaultSuccessUrl("/api/peoples", true)
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.and().httpBasic();
 	}
 	
 	@Override
