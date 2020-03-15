@@ -35,7 +35,7 @@ public class People {
 	private String nationality;
 	
 	@NotNull
-//	@Indexed(unique = true, name = "people_cpf_unique")
+	@Indexed(unique = true, name = "people_cpf_unique")
 	@Size(min=11)
 	@CPF(message="invalide CPF")
 	private String cpf;
