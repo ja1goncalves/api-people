@@ -23,7 +23,7 @@ public class People {
 	@Size(min=1)
 	private String gender;
 	
-//	@Email(message = "Email should be valid")
+	@Email(message = "Email should be valid")
 	private String email;
 	
 	@NotNull
@@ -37,7 +37,7 @@ public class People {
 	@NotNull
 //	@Indexed(unique = true, name = "people_cpf_unique")
 	@Size(min=11)
-//	@CPF(message="invalide CPF")
+	@CPF(message="invalide CPF")
 	private String cpf;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
