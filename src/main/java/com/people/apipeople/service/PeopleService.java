@@ -3,6 +3,7 @@ package com.people.apipeople.service;
 import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.people.apipeople.repository.IPeopleRepository;
@@ -18,7 +19,7 @@ public class PeopleService implements IPeopleService {
 
 	@Override
 	public Flux<People> findAll() {
-		return repository.findAll();
+		return repository.findAll(Sort.by(Sort.Direction.DESC, "created_at"));
 	}
 
 	@Override
